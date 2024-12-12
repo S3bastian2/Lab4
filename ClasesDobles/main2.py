@@ -136,3 +136,9 @@ temp = l.first()
 for i in range (2):
     temp = temp.getNext()
 l.addAfter(temp, usu3)
+
+temp = l.first()
+while temp != None and temp != l.last():
+    print(temp.getData())
+    temp = temp.getNext()
+print(l.last().getData())
