@@ -25,7 +25,7 @@ class ListaDoble():
         return self.__tail
     
     def addFirst(self, e):
-        n = nodoDoble(e)
+        n = nodoDoble(e,None,None)
         if self.isEmpty():
             self.__head = n
             self.__tail = n

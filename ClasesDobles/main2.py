@@ -1,5 +1,6 @@
 from Usuario import *
-
+from ListaDoble import ListaDoble
+from nodoDoble import nodoDoble
 u1 = Usuario("David", 1, "Valledupar", 3134697894, "david@recocha.edu.co")
 f1 = Fecha(13, 11, 2006)
 d1 = Direccion("Kra 92", "74B-08", "Robledo", "Medellín", None, None)
@@ -34,3 +35,51 @@ d5 = Direccion("Carrera 50", "9B-03", "Centro", "Barranquilla", None, None)
 
 u5.setFechaNacimiento(f5)
 u5.setDir(d5)
+
+Usuarios = [u1,u2,u3,u4,u5]
+
+l = ListaDoble(None, None, 0)
+for i in range(len(Usuarios)):
+    l.addLast(Usuarios[i])
+
+temp = l.first()
+while temp != None and temp != l.last():
+    print(temp.getData())
+    temp = temp.getNext()
+print(l.last().getData())
+
+#posteriormente
+for i in range(2):
+    print("ingrese sus datos: ")
+    nombre = input("Ingrese su nombre: ")
+    id = input("Ingrese su id: ")
+    ciudadNacimiento = input("Ingrese su ciudad de nacimiento: ")
+    telefono =input("Ingrese su numero de telefono: ")
+    email = input("Ingrese su correo electronico: ")
+    usu1 = Usuario(nombre, id, ciudadNacimiento, telefono, email)
+        
+    print("ingrese su fecha de nacimeinto")
+    dd = input("Ingrese su dia de nacimiento: ")
+    mm = input("Ingrese su mes de nacimiento: ")
+    aa = input("Ingrese el año de nacimiento: ")
+    f = Fecha(dd, mm, aa)
+    usu1.setFechaNacimiento(f)
+    print("ingrese su direccion: ")
+    calle = input("Ingrese su calle: ")
+    nomenclatura = input("Ingrese la nomenclatura (#): ")
+    barrio = input("Ingrese el barrio: ")
+    ciudad = input("Ingrese la ciudad: ")
+    edificio = input("Ingrese el edificio: ")
+    apto = input("Ingrese el numero de apartemento: ")
+    d = Direccion(calle, nomenclatura, barrio, ciudad, edificio, apto)
+    usu1.setDir(d)
+    if i == 0:
+        l.addFirst(usu1)
+    else:
+        l.addLast(usu1)
+
+temp = l.first()
+while temp != None and temp != l.last():
+    print(temp.getData())
+    temp = temp.getNext()
+print(l.last().getData())
