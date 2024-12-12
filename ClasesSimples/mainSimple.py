@@ -13,6 +13,7 @@ while temp != None and temp.getNext() != None:
     temp = temp.getNext()
 print(temp.getData())
 
+print("\n")
 print("Se muestra la lista sin los valores 1, 10, 20")
 print("\n")
 
