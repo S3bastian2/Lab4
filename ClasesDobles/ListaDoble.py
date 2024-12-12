@@ -83,7 +83,19 @@ class ListaDoble():
             n.setPrev(None)
             self.__size -= 1
             return e
-            
+        
+    def addAfter(self, n, e):
+        if n == self.last():
+            self.addLast(e)
+        else:
+            m = nodoDoble(e)
+            nx = n.getNext()
+            n.setNext(m)
+            m.setPrev(n)
+            m.setNext(nx)
+            nx.setPrev(m)
+            self.__size += 1   
+                      
     def addBefore(self, n, e):
         if n == self.first():
             self.addFirst(e)
@@ -96,14 +108,3 @@ class ListaDoble():
             n.setPrev(m)
             self.__size += 1
             
-    def addAfter(self, n, e):
-        if n == self.last():
-            self.addLast(e)
-        else:
-            m = nodoDoble(e)
-            nx = n.getNext()
-            n.setNext(m)
-            m.setPrev(n)
-            m.setNext(nx)
-            nx.setPrev(m)
-            self.__size += 1 
