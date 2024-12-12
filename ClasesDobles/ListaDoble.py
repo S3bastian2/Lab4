@@ -36,7 +36,7 @@ class ListaDoble():
         self.__size += 1
         
     def addLast(self, e):
-        n = nodoDoble(e)
+        n = nodoDoble(e, None, None)
         if self.isEmpty():
             self.__head = n
             self.__tail = n

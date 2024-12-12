@@ -4,11 +4,11 @@ class nodoDoble:
         self.__next = next
         self.__prev = prev
         
-    def DoubleNode(self):
-        self.__init__()
+    def nodoDoble(self):
+        self.__init__(None, None, None)
     
-    def DoubleNode(self, d):
-        self.__init__(d)
+    def nodoDoble(self, d):
+        self.__init__(d, None, None)
         
     def setData(self, d):
         self.__data = d
