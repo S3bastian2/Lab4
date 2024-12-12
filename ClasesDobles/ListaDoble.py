@@ -88,7 +88,7 @@ class ListaDoble():
         if n == self.last():
             self.addLast(e)
         else:
-            m = nodoDoble(e)
+            m = nodoDoble(e,None,None)
             nx = n.getNext()
             n.setNext(m)
             m.setPrev(n)
@@ -100,7 +100,7 @@ class ListaDoble():
         if n == self.first():
             self.addFirst(e)
         else:
-            m = nodoDoble(e)
+            m = nodoDoble(e,None,None)
             p = n.getPrev()
             p.setNext(m)
             m.setPrev(p)
