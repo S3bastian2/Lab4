@@ -25,7 +25,7 @@ class List():
         return self.__tail
     
     def addFirst(self, e):
-        n = Nodo(e) #Creamos un nodo con valor e.
+        n = Nodo(e, None) #Creamos un nodo con valor e.
         if self.isEmpty(n): #Verificamos si la lista esta vacia.
             self.__head = n #Si la lista esta vacia entonces el valor apunta a la cabeza
             self.__tail = n #Si la lista este vacia entonces el mismo valor apunta a la cola
@@ -35,7 +35,7 @@ class List():
         self.__size += 1 #Se aumenta el tamaño de la lista
     
     def addLast(self, e):
-        n = Nodo(e) #Creamos un nuevo nodo que va a tener un valor e.
+        n = Nodo(e, None) #Creamos un nuevo nodo que va a tener un valor e.
         if self.isEmpty(n): #En el caso de la lista este vacia.
             self.__head = n #N va a ser la cabeza.
             self.__tail = n #N a su vez va a ser la cola.
