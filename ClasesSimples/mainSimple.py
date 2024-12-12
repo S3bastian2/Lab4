@@ -13,18 +13,34 @@ while temp != None and temp.getNext() != None:
     temp = temp.getNext()
 print(temp.getData())
 
+print("Se muestra la lista sin los valores 1, 10, 20")
+print("\n")
+
 #Eliminar valores 10, 20
-temp = l1.First()
-while temp!= None and temp.getData() != 10:
-    temp = temp.getNext()
-l1.remove(temp)
+
+temp2 = l1.First()
+while temp2!= None and temp2.getData() != 10:
+    temp2 = temp2.getNext()
 
 temp = l1.First()
-while temp !=None and temp.getData() != 20:
+while temp!= None and temp.getData() != 8:
     temp = temp.getNext()
-l1.remove(temp)
+temp.setNext(temp2.getNext())
+temp2.setNext(None)
+
+temp3 = l1.First()
+while temp3!= None and temp3.getData() != 20:
+    temp3 = temp3.getNext()
+
+temp4 = l1.First()
+while temp4!= None and temp4.getData() != 18:
+    temp4 = temp4.getNext()
+temp4.setNext(temp3.getNext())
+temp3.setNext(None)
 
 temp1 = l1.First()
 while temp1 != None and temp1.getNext() != None:
     print(temp1.getData())
     temp1 = temp1.getNext()
+
+print(temp1.getData())
